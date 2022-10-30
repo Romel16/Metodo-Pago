@@ -476,18 +476,11 @@ $(document).ready(function() {
     /*===================================================================*/
     $("#iptRuc").keyup(function() {
 
-        $("#iptCodigoReg").val('')
-        $("#iptPagoReg").val('')
-
-        tablePagos.search('').columns().search('').draw();
+        table.columns($(this).data('index')).search(this.value).draw();
     })
 
-    $("#iptCodigoReg").keyup(function() {
-
-
-        tablePagos.column($(this).data('index')).search(this.value).draw();
-    })
-
+    
+    
 
     /*===================================================================*/
     // EVENTO PARA LIMPIAR INPUTS DE CRITERIOS DE BUSQUEDA
